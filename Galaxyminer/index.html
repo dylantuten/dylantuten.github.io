@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Galaxyminer</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="main">
+        <h2 class="shadow">&#X20B9;<span id="rupees">0.00</span></h2>
+        <h2 class="shadow">EXP <span id="exp">0</span></h2><br>
+        <button id="generate">Generate Rupees</button> &nbsp;<b>/</b>&nbsp; <button id="generate2">Generate EXP</button><br><br>
+
+		<div id="mine">
+		<hr>
+			<h2 class="subtitle" id="mineTitleToggle"><i><a href="#">Mine</a></i></h2>
+			
+			<div id="ore1container">
+				<h3 class="shadow2"><span id="ore1" class="rename"></span></h3>
+				<b><a href="#!" onclick="mineOre1()">Mine</a> &nbsp;/ You have <span id="ore1count"></span> rubals of this.</b> 
+			</div>
+			<div id="ore2container">
+				<h3 class="shadow2"><span id="ore2" class="rename"></span></h3>
+				<b><a href="#!" onclick="mineOre2()">Mine</a> &nbsp;/ You have <span id="ore2count"></span> rubals of this.</b>
+			</div>
+			<div id="ore3container">
+				<h3 class="shadow2"><span id="ore3" class="rename"></span></h3>
+				<b><a href="#!" onclick="mineOre3()">Mine</a> &nbsp;/ You have <span id="ore3count"></span> rubals of this.</b>
+			</div>
+			<div id="ore4container">
+				<h3 class="shadow2"><span id="ore4" class="rename"></span></h3>
+				<b><a href="#!" onclick="mineOre4()">Mine</a> &nbsp;/ You have <span id="ore4count"></span> rubals of this.</b>
+			</div>
+			<div id="ore5container">
+				<h3 class="shadow2"><span id="ore5" class="rename"></span></h3>
+				<b><a href="#!" onclick="mineOre5()">Mine</a> &nbsp;/ You have <span id="ore5count"></span> rubals of this.</b>
+			</div><br>
+		</div>
+		
+		<div id="openShop">
+			<hr>
+			<h2 class="subtitle" id="openShopTitleToggle"><i><a href="#">Sell</a></i></h2>
+			
+			<div id="ore1container">
+				<h3><span id="ore1s" class="shadow2"></span> (<span id="ore1count2"></span>)</h3>
+				<b><a href="#!" onclick="sellOre1(1)">Sell</a> &nbsp;/ You will get <span id="ore1price"></span> rupees.</b> 
+			</div>
+			<div id="ore2container">
+				<h3><span id="ore2s" class="shadow2"></span> (<span id="ore2count2"></span>)</h3>
+				<b><a href="#!" onclick="sellOre2(1)">Sell</a> &nbsp;/ You will get <span id="ore2price"></span> rupees.</b> 
+			</div>
+			<div id="ore3container">
+				<h3><span id="ore3s" class="shadow2"></span> (<span id="ore3count2"></span>)</h3>
+				<b><a href="#!" onclick="sellOre3(1)">Sell</a> &nbsp;/ You will get <span id="ore3price"></span> rupees.</b> 
+			</div>
+			<div id="ore4container">
+				<h3><span id="ore4s" class="shadow2"></span> (<span id="ore4count2"></span>)</h3>
+				<b><a href="#!" onclick="sellOre4(1)">Sell</a> &nbsp;/ You will get <span id="ore4price"></span> rupees.</b> 
+			</div>
+			<div id="ore5container">
+				<h3><span id="ore5s" class="shadow2"></span> (<span id="ore5count2"></span>)</h3>
+				<b><a href="#!" onclick="sellOre5(1)">Sell</a> &nbsp;/ You will get <span id="ore5price"></span> rupees.</b> 
+			</div><br>
+		</div>
+    </div>
+
+    <div id="sidebar"><div id="sidebar-inside">
+        <h2 class="shadow"><a href="#">Galaxyminer</a>&nbsp; (<span id="playerName" class="rename"></span>)</h2>
+        <h3><span id="galaxyName" class="rename"></span> / <span id="systemName" class="rename"></span> / <i><span id="planetName" class="rename"></span></i></h3>
+        <hr>
+        <b><br><a href="#!" onclick="toggleStatus()" id="status"></a></b>
+        <br><br><br><br><br><br><br> <hr><br>
+		<h3><a href="#!" id="mineToggle">Mine </a>&nbsp;/ &nbsp;<a href="#" id="openShopToggle">Sell</a>&nbsp; / &nbsp;<a href="#" id="researchToggle">Research</a><span id="worker4">&nbsp; / &nbsp;<a href="#" id="nwfToggle">Business</a></span><span id="travel2">&nbsp; / &nbsp;<a href="#" id="travelToggle">Travel</a></span></h3>
+    
+	
+		<div id="research">
+			<hr><br>
+			<h2 id="researchTitleToggle"><i><a href="#!" class="subtitle">Research</a></i>&nbsp; <span id="rep" class="shadow">(REP 0)</span></h2><br>
+			<b><a href="#!" id="levelUpButton" onclick="lvlUp()">Level Up</a> &nbsp;/ Spend <span id="levelUpPrice">&#X20B9;500,000</span> and level up for <i>all</i> <span id="exp3"></span> EXP and <i>all</i> <span id="rep500"></span> REP.</b><br>
+			<b><a href="#!" id="convertButton" onclick="convertEXP()">&nbsp;Convert</a> &nbsp;/ Convert <i>all</i> of your <span id="exp2"></span> EXP into <span id="rep3"></span> REP.</b><br>
+		<br>
+			<b id="hidemebusi"><a href="#!" id="businessCostBUTTON" onclick="MANAGER()">Research</a> &nbsp;/ Business Management (<span id="businessCost">1,000.00 REP</span>)<br></b>
+			<b id="hidememagi"><a href="#!" id="magicBUTTON" onclick="MAGIC()">Research</a> &nbsp;/ Show More Information (<span id="magicCost">5,000.00 REP</span>)<br></b>
+<div id="alphahide">
+			<b id="hidemep"><a href="#!" id="interplanetaryCostBUTTON" onclick="TRAV('p')">Research</a> &nbsp;/ Interplanetary Spaceflight (<span id="interplanetaryCost">1,000,000.00 REP</span>)<br></b>
+			<b id="hidemes"><a href="#!" id="interstellarCostBUTTON" onclick="TRAV('s')">Research</a> &nbsp;/ Interstellar Spaceflight (<span id="interstellarCost">1,000,000,000.00 REP</span>)<br></b>
+			<b id="hidemeg"><a href="#!" id="intergalacticCostBUTTON" onclick="TRAV('g')">Research</a> &nbsp;/ Intergalactic Spaceflight (<span id="intergalacticCost">1,000,000,000,000.00 REP</span>)<br></b>
+</div><br>	
+		</div>
+
+		<div id="nwf">
+			<hr><br>
+			<h2 class="subtitle" id="nwfTitleToggle"><i><a href="#">Business</a></i></h2>
+			
+			<div id="traderContainer">
+				<h3 class="shadow2">Traders</h3>
+				<b><a href="#!" onclick="hire('t')">Hire</a> &nbsp;/ You have <span id="traders"></span> traders each granting an extra <span id="traders1"></span> RPT</b> 
+			</div>
+			<div id="gamerContainer">
+				<h3 class="shadow2">Gamers</h3>
+				<b><a href="#!" onclick="hire('g')">Hire</a> &nbsp;/ You have <span id="gamers"></span> gamers each granting an extra <span id="gamers1"></span> EPT</b>
+			</div>
+			<div id="minerContainer">
+				<h3 class="shadow2">Miners</h3>
+				<b><a href="#!" onclick="hire('m')">Hire</a> &nbsp;/ You have <span id="miners"></span> miners each granting an extra <span id="miners1"></span> RbPT</b>
+			</div>
+			<br>
+		</div>
+
+		<div id="travel">
+			<hr><br>
+			<h2 class="subtitle" id="travelTitleToggle"><i><a href="#">Travel</a></i></h2><br>
+		</div>
+	</div></div>
+	
+	<div style="text-align: right; float: right;margin-top:20px;margin-right:20px;"><i>a game by&nbsp; </i><a href="https://dylantuten.com" title="dylantuten.com">Dylan Tuten</a><br><br><!--<a href="#" id="nwfToggle" title="New World Foundation">NWF</a> / --><a href="#" onclick="reset()">Reset Save</a></div>
+
+</body>
+</html>
